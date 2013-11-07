@@ -1,3 +1,10 @@
+body {
+  background: #000000; }
+
 #page {
   max-width: 980px;
   margin: 0 auto; }
+  #page ul#menu {
+    list-style-type: none; }
+    #page ul#menu li {
+      display: inline; }
