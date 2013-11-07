@@ -4,4 +4,12 @@ body {
 #page {
     max-width: 980px;
     margin: 0 auto;
+
+    ul#menu {
+        list-style-type: none;
+
+        li {
+            display: inline;
+        }
+    }
 }
