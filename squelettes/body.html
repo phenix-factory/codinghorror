@@ -5,15 +5,17 @@
                 <INCLURE{fond=header/#ENV{type-page},env} />
             </div>
         </header>
+
         <nav id="nav">
             <INCLURE{fond=inclure/nav,env} />
         </nav>
+
         <section class="row" id="container" role="main">
             <div class="columns large-9">
                 <INCLURE{fond=content/#ENV{type-page},env} />
             </div>
-
         </section>
+
         <footer id="footer">
             <INCLURE{fond=footer/#ENV{type-page},env} />
         </footer>
