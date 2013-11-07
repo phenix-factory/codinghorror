@@ -1,0 +1,11 @@
+<B_menu_principal>
+<ul>
+    <li>
+        <a href="#URL_SITE_SPIP" [title="(#NOM_SITE_SPIP|attribut_html)"]>Home</a>
+    </li>
+    <BOUCLE_menu_principal(ARTICLES){id_rubrique=1}>
+        [<li><a href="#URL_ARTICLE" [title="(#TITRE|attribut_html)"]>(#TITRE)</a></li>]
+    </BOUCLE_menu_principal>
+</ul>
+</B_menu_principal>
+    <//B_menu_principal>

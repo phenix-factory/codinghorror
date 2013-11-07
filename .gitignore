@@ -1,0 +1,10 @@
+config/connect.php
+config/bases/
+tmp/
+IMG/
+local/
+.backup
+.svn*
+snv*
+.DS_Store
+.htaccess
