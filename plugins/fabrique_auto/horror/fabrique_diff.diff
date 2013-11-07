@@ -1,0 +1,47 @@
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_horror.php ../plugins/fabrique_auto/.backup/horror/base/horror.php ../plugins/fabrique_auto/horror/base/horror.php
+53a54
+> 			"site"               => "text NOT NULL DEFAULT ''",
+65,67c66,68
+< 		'champs_editables'  => array('titre', 'descriptif', 'pseudo', 'email'),
+< 		'champs_versionnes' => array('titre', 'descriptif', 'pseudo', 'email'),
+< 		'rechercher_champs' => array("titre" => 8, "descriptif" => 7, "pseudo" => 6, "email" => 6),
+---
+> 		'champs_editables'  => array('titre', 'descriptif', 'pseudo', 'email', 'site'),
+> 		'champs_versionnes' => array('titre', 'descriptif', 'pseudo', 'email', 'site'),
+> 		'rechercher_champs' => array("titre" => 8, "descriptif" => 7, "pseudo" => 6, "email" => 6, "site" => 2),
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_horror.php ../plugins/fabrique_auto/.backup/horror/formulaires/editer_horreur.html ../plugins/fabrique_auto/horror/formulaires/editer_horreur.html
+31,32c31,37
+< 			[(#SAISIE{inpu, email, obligatoire=oui,
+< 				label=<:horreur:label_email:>})]
+---
+> 			[(#SAISIE{input, email, obligatoire=oui,
+> 				label=<:horreur:label_email:>,
+> 				explication=<:horreur:explication_email:> })]
+>
+> 			[(#SAISIE{input, site,
+> 				label=<:horreur:label_site:>,
+> 				explication=<:horreur:explication_site:> })]
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_horror.php ../plugins/fabrique_auto/.backup/horror/lang/horreur_fr.php ../plugins/fabrique_auto/horror/lang/horreur_fr.php
+13a14
+> 	'explication_email' => 'Pour être tenu au courant !',
+14a16
+> 	'explication_site' => 'Si vous avez un site web, un lien sera fait sur votre pseudo. Sinon, bah on s\'en fou',
+28a31
+> 	'label_site' => 'Site web ?',
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_horror.php ../plugins/fabrique_auto/.backup/horror/paquet.xml ../plugins/fabrique_auto/horror/paquet.xml
+12c12
+< 		Paquet genere le 2013-11-07 22:54:23
+---
+> 		Paquet genere le 2013-11-07 22:57:13
+diff -r -x . -x .. -x fabrique_diff.diff -x fabrique_horror.php ../plugins/fabrique_auto/.backup/horror/prive/objets/contenu/horreur.html ../plugins/fabrique_auto/horror/prive/objets/contenu/horreur.html
+22a23,27
+> [<div class="champ contenu_site[ (#SITE*|strlen|?{'',vide})]">
+> 	<label><:horreur:label_site:> : </label>
+> 	<span dir='#LANG_DIR' class='#EDIT{site} site'>(#SITE)</span>
+> </div>]
+>
+Only in ../plugins/fabrique_auto/horror/prive/objets: infos
+Only in ../plugins/fabrique_auto/horror/prive/squelettes/contenu: horreur.html
+Only in ../plugins/fabrique_auto/horror/prive/squelettes/contenu: horreurs.html
+Only in ../plugins/fabrique_auto/horror/: saisies
+Only in ../plugins/fabrique_auto/horror/: saisies-vues

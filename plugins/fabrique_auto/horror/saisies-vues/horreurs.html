@@ -1,0 +1,20 @@
+<BOUCLE_test_multiple(CONDITION){si #ENV{multiple}|=={on}|oui}>
+	[(#SET{valeur,[(#ENV*{valeur}|is_array|?{[(#ENV*{valeur})],[(#ENV*{valeur}|explode{','})]})]})]
+	<B_horreurs_selectionnes>
+	<ul>
+	<BOUCLE_horreurs_selectionnes(HORREURS){id_horreur IN #GET*{valeur}}
+		{par num titre, titre}{statut?}{tout}>
+		<li class="choix">#TITRE (#ID_HORREUR)</li>
+	</BOUCLE_horreurs_selectionnes>
+	</ul>
+	</B_horreurs_selectionnes>
+   	[(#ENV*{sans_reponse}|propre)]
+	<//B_horreurs_selectionnes>
+</BOUCLE_test_multiple>
+	<BOUCLE_horreur_selectionne(HORREURS){id_horreur=#ENV{valeur}}
+		{par num titre, titre}{statut?}{tout}>
+	  	<p>#TITRE (#ID_HORREUR)</p>
+	</BOUCLE_horreur_selectionne>
+   	[(#ENV*{sans_reponse}|propre)]
+	<//B_horreur_selectionne>
+<//B_test_multiple>

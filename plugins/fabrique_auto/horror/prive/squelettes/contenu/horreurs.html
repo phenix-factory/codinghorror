@@ -1,0 +1,8 @@
+#FORMULAIRE_RECHERCHE_ECRIRE{#SELF,ajax}
+<div class="nettoyeur"></div>
+
+<INCLURE{fond=prive/objets/liste/horreurs, par=titre, env, ajax, sinon=<:horreur:info_aucun_horreur:>}>
+
+[(#AUTORISER{creer,horreur})
+	[(#URL_ECRIRE{horreur_edit,new=oui}|icone_verticale{<:horreur:icone_creer_horreur:>,horreur,new,right})]
+]

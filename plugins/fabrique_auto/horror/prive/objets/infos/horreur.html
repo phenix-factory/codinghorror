@@ -1,0 +1,28 @@
+<BOUCLE_horreur(HORREURS){id_horreur=#ENV{id}}{statut?}>
+<div class='infos'>
+[(#SET{texte_objet,<:horreur:titre_horreur:>})]
+<div class='numero'><:titre_cadre_numero_objet{objet=#GET{texte_objet}}:><p>#ID_HORREUR</p></div>
+
+[(#FORMULAIRE_INSTITUER_OBJET{horreurs,#ID_HORREUR})]
+
+[(#REM)
+
+	Bouton voir en ligne
+
+]
+<BOUCLE_publie(HORREURS){id_horreur}>
+	[(#VAL{redirect}
+		|generer_url_action{type=horreurs&id=#ID_HORREUR}
+		|parametre_url{var_mode,calcul}
+		|icone_horizontale{<:icone_voir_en_ligne:>,racine})]
+</BOUCLE_publie>
+	[(#AUTORISER{previsualiser,horreurs,#ID_HORREUR,'',#ARRAY{statut,#STATUT}})
+		[(#VAL{redirect}
+			|generer_url_action{type=horreurs&id=#ID_HORREUR}
+			|parametre_url{var_mode,preview}
+			|icone_horizontale{<:previsualiser:>,preview})]
+	]
+<//B_publie>
+
+</div>
+</BOUCLE_horreur>
