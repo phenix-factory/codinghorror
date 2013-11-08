@@ -18,6 +18,10 @@ body {
         }
     }
 
+    ul {
+        list-style: none;
+    }
+
     #container {
         article {
             background: $gris;
