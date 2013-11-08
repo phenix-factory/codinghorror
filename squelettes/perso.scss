@@ -3,8 +3,6 @@ $vert_fonce: #00a600;
 $vert_clair: #cdffbf;
 $marge: 0.9375em;
 
-
-
 body {
     background: #000000;
 }
@@ -35,6 +33,7 @@ body {
 
             img {
                 margin-bottom: $marge;
+                border: 1px solid $vert_clair;
             }
 
             p {
