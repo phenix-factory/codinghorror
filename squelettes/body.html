@@ -13,10 +13,10 @@
         </nav>
 
         <section class="row" id="container" role="main">
-            <div class="columns large-9">
+            <div id="content" class="columns large-9 ajax">
                 <INCLURE{fond=content/#ENV{type-page},env} />
             </div>
-            <div class="columns large-3">
+            <div id="sidebar" class="columns large-3">
                 <INCLURE{fond=extra1/#ENV{type-page},env} />
             </div>
         </section>
