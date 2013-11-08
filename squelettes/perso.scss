@@ -1,3 +1,5 @@
+$vert_fonce: #00a600;
+$vert_clair: #cdffbf;
 body {
     background: #000000;
 }
@@ -10,6 +12,21 @@ body {
 
         li {
             display: inline;
+        }
+    }
+
+    #container {
+        article {
+            p {
+                a {
+                    &.spip_out {
+                        color: $vert_fonce;
+                    }
+                    &.spip_in {
+                        color: $vert_fonce;
+                    }
+                }
+            }
         }
     }
 }
