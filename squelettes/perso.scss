@@ -1,5 +1,7 @@
 $vert_fonce: #00a600;
 $vert_clair: #cdffbf;
+$marge: 0.9375em;
+
 body {
     background: #000000;
 }
@@ -18,7 +20,15 @@ body {
     #container {
         article {
             background: #212121;
-            padding: 0.9375em;
+            padding: $marge;
+
+            h2 {
+                font-size: 1.5em;
+                margin: 0;
+                margin-bottom: $marge;
+                padding: 0;
+            }
+
             p {
                 a {
                     &.spip_out {
