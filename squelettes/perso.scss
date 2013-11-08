@@ -29,6 +29,10 @@ body {
                 padding: 0;
             }
 
+            img {
+                margin-bottom: $marge;
+            }
+
             p {
                 a {
                     &.spip_out {
