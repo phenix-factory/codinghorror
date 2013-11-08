@@ -1,6 +1,6 @@
 [(#REM) Sur le sommaire on affiche les dernière horreur. ]
 <B_new>
-<BOUCLE_new(HORREURS){id_secteur=2}>
+<BOUCLE_new(HORREURS){id_secteur=2}{pagination}>
     <article>
         [<h2><a href="#URL_HORREUR" [title="(#TITRE|couper{50}|attribut_html)"]>(#TITRE)</a></h2>]
 
@@ -9,4 +9,5 @@
         [(#DESCRIPTIF)]
     </article>
 </BOUCLE_new>
+[<p class="pagination">(#PAGINATION)</p>]
 </B_new>
