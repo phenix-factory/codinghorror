@@ -34,6 +34,10 @@ body {
             img {
                 margin-bottom: $marge;
                 border: 1px solid $vert_clair;
+
+                &:hover {
+                    border: 1px solid $vert_fonce;
+                }
             }
 
             p {
