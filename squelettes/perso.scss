@@ -6,6 +6,7 @@ $marge: 0.9375em;
 body {
     background: #000000;
 }
+
 #page {
     max-width: 980px;
     margin: 0 auto;
@@ -22,6 +23,15 @@ body {
         list-style: none;
     }
 
+    #proposer {
+        float: right;
+    }
+
+    #nav {
+        .proposer_bouton {
+            padding-right: 0;
+        }
+    }
     #container {
         article {
             background: $gris;
