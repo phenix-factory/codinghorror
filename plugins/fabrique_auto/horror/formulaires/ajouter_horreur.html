@@ -1,0 +1,48 @@
+<div class="formulaire_spip formulaire_#FORM">
+
+[<p class="reponse_formulaire reponse_formulaire_erreur">
+    (#ENV*{message_erreur})
+</p>]
+[<p class="reponse_formulaire reponse_formulaire_ok">
+    (#ENV*{message_ok})
+</p>]
+
+[(#EDITABLE|oui)
+    <form action="#ENV{action}" method="post">
+        #ACTION_FORMULAIRE{#ENV{action}}
+        <ul>
+            [(#SAISIE{input, titre, obligatoire=oui,
+                label=<:horreur:label_titre:>,
+                explication=<:horreur:explication_titre:> })]
+
+            [<li class="editer editer_rubrique[ (#ENV**{erreurs/id_parent}|oui)erreur]">
+                    <label for="id_parent"><:titre_cadre_interieur_rubrique:></label>[
+                    <span class="erreur_message">(#ENV**{erreurs/id_parent})</span>
+                    ]
+                    (#VAL|chercher_rubrique{#ENV{id_horreur},#ENV{id_parent},'horreur',#ENV{id_secteur},'',0,form_simple})
+            </li>]
+
+            [(#SAISIE{textarea, descriptif, obligatoire=oui,
+                label=<:horreur:label_descriptif:>,
+                explication=<:horreur:explication_descriptif:> ,
+                li_class=haut, class=inserer_barre_edition, rows=4})]
+
+            [(#SAISIE{input, pseudo,
+                label=<:horreur:label_pseudo:>,
+                explication=<:horreur:explication_pseudo:> })]
+
+            [(#SAISIE{input, email, obligatoire=oui,
+                label=<:horreur:label_email:>,
+                explication=<:horreur:explication_email:> })]
+
+            [(#SAISIE{input, site,
+                label=<:horreur:label_site:>,
+                explication=<:horreur:explication_site:> })]
+        </ul>
+
+        <p class="boutons">
+            <input type="submit" class="submit" value="<:pass_ok:>" />
+        </p>
+    </form>
+]
+</div>
