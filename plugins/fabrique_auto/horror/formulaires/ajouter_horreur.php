@@ -28,6 +28,31 @@ function formulaires_ajouter_horreur_charger_dist() {
 function formulaires_ajouter_horreur_verifier_dist() {
     $erreurs = array();
 
+    // Champ obligatoire:
+    if (!_request('titre')) {
+        $erreurs['message_erreur'] = 'Certain champs sont obligatoire...';
+        $erreurs['titre'] = _T('info_obligatoire');
+    }
+    if (!_request('selection')) {
+        $erreurs['message_erreur'] = 'Certain champs sont obligatoire...';
+        $erreurs['selection'] = _T('info_obligatoire');
+    }
+    if (!_request('descriptif')) {
+        $erreurs['message_erreur'] = 'Certain champs sont obligatoire...';
+        $erreurs['descriptif'] = _T('info_obligatoire');
+    }
+    if (!_request('email')){
+        $erreurs['message_erreur'] = 'Certain champs sont obligatoire...';
+        $erreurs['descriptif'] = _T('info_obligatoire');
+    }
+
+    // Vérifiaction du mail
+    include_spip('inc/filtres');
+    if (!email_valide(_request('email'))) {
+        $erreurs['message_erreur'] .= 'Votre email est invalide';
+        $erreurs['email'] = 'Email invalide';
+    }
+
     return $erreurs;
 }
 
