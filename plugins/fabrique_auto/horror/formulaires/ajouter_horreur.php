@@ -1,8 +1,16 @@
 <?php
 function formulaires_ajouter_horreur_charger_dist() {
+    // On récupère les catégories
+    $cats = sql_allfetsel('id_rubrique, titre', 'spip_rubriques', 'id_parent=2');
+    $categories = array();
+    foreach ($cats as $cat) {
+        $categories[$cat['id_rubrique']] = $cat['titre'];
+    }
+
     // Contexte du formulaire.
     $contexte = array(
-        '' => '',
+        // On envoie la liste des catégorie d'horreur à l'env pour traitement en saisie.
+        'rubrique' => $categories
     );
 
     return $contexte;

@@ -15,12 +15,12 @@
                 label=<:horreur:label_titre:>,
                 explication=<:horreur:explication_titre:> })]
 
-            [<li class="editer editer_rubrique[ (#ENV**{erreurs/id_parent}|oui)erreur]">
-                    <label for="id_parent"><:titre_cadre_interieur_rubrique:></label>[
-                    <span class="erreur_message">(#ENV**{erreurs/id_parent})</span>
-                    ]
-                    (#VAL|chercher_rubrique{#ENV{id_horreur},#ENV{id_parent},'horreur',#ENV{id_secteur},'',0,form_simple})
-            </li>]
+            [(#SAISIE{
+                    selection,
+                    id_parent,
+                    obligatoire=oui,
+                    label=Categorie,
+                    datas=#ENV{rubrique}})]
 
             [(#SAISIE{textarea, descriptif, obligatoire=oui,
                 label=<:horreur:label_descriptif:>,
