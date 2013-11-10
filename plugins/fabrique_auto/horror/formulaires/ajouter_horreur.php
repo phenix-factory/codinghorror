@@ -96,6 +96,11 @@ function formulaires_ajouter_horreur_traiter_dist() {
     include_spip('action/editer_objet');
     $id_objet = objet_inserer('horreur', $id_parent, $set);
 
+    // On passe en proposer à la publication
+    autoriser_exception('modifier', 'horreur', $id_objet);
+    objet_instituer('horreur', $id_objet, array('statut' => 'prop', 'id_parent' => $id_parent));
+    autoriser_exception('modifier', 'horreur', $id_objet, false);
+
     // Upload du logo
     $objet = objet_type('horreur');
     $_id_objet = id_table_objet($objet);
