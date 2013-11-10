@@ -12,8 +12,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// E
 	'explication_descriptif' => 'Explication de l\'horreur',
 	'explication_email' => 'Pour être tenu au courant !',
-	'explication_pseudo' => 'Votre pseudo, sinon ce sera anonyme',
-	'explication_site' => 'Si vous avez un site web, un lien sera fait sur votre pseudo. Sinon, bah on s\'en fou',
+	'explication_pseudo' => 'Votre pseudo, sinon ce sera Anonymous, et on aura la NSA aux fesses !',
+	'explication_site' => 'Si vous avez un site web, un lien sera fait sur votre pseudo. Sinon, bah on s\'en fou.',
 	'explication_titre' => 'Titre de votre horreur',
 
 	// I
@@ -44,6 +44,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'titre_horreurs_rubrique' => 'Horreurs de la rubrique',
 	'titre_langue_horreur' => 'Langue de cette horreurs',
 	'titre_logo_horreur' => 'Logo de cette horreurs',
+
+    'screen' => 'Placer une image avec le code horrible que vous venez de voir. Si vous saignez trop de sang par les yeux, pensez à voir un chaman.',
 );
 
 ?>
