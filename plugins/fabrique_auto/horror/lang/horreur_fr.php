@@ -25,8 +25,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'info_nb_horreurs' => '@nb@ horreurs',
 
 	// L
-	'label_descriptif' => 'descriptif',
-	'label_email' => 'email',
+	'label_descriptif' => 'Descriptif',
+	'label_email' => 'Email',
 	'label_pseudo' => 'Pseudo',
 	'label_site' => 'Site web ?',
 	'label_titre' => 'Titre',
