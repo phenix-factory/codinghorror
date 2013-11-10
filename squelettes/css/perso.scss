@@ -99,5 +99,10 @@ h2, h2 a, h2 a:focus, h2 a:hover, h2 a:active {
         span.obligatoire {
             color: $rouge;
         }
+        fieldset {
+            legend {
+                background: transparent;
+            }
+        }
     }
 }
