@@ -68,6 +68,10 @@ function formulaires_ajouter_horreur_verifier_dist() {
 
     // verifier les extensions
     $sources = formulaire_editer_logo_get_sources();
+    if (empty($sources['on']['name'])) {
+        $erreurs['message_erreur'] = 'Vous devez ajouter un screenshot, bordel !';
+        $erreurs['logo_on'] = 'Sans image, rien ne va plus !';
+    }
 
     foreach($sources as $etat=>$file) {
         // seulement si une reception correcte a eu lieu
