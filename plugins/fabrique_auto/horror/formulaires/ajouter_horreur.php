@@ -72,9 +72,10 @@ function formulaires_ajouter_horreur_verifier_dist() {
     foreach($sources as $etat=>$file) {
         // seulement si une reception correcte a eu lieu
         if ($file AND $file['error'] == 0) {
-            if (!in_array(strtolower(pathinfo($file['name'], PATHINFO_EXTENSION)),array('jpg','png','gif','jpeg')))
-                $erreurs['logo_'.$etat] = _L('Extension non reconnue');
-                $erreurs['message_erreur'] = 'Fichier non reconnu (format autorisé: jpg png gif)';
+            if (!in_array(strtolower(pathinfo($file['name'], PATHINFO_EXTENSION)),array('jpg','png','gif','jpeg'))) {
+                    $erreurs['logo_'.$etat] = _L('Extension non reconnue');
+                    $erreurs['message_erreur'] = 'Fichier non reconnu (format autorisé: jpg png gif)';
+                }
         }
     }
 
@@ -82,7 +83,41 @@ function formulaires_ajouter_horreur_verifier_dist() {
 }
 
 function formulaires_ajouter_horreur_traiter_dist() {
-    //Traitement du formualaire.
+    // On va créer une nouvelle horreur.
+    $set =array(
+                'titre' => _request('titre'),
+                'descriptif' => _request('descriptif'),
+                'pseudo' => _request('pseudo'),
+                'email' => _request('email'),
+                'site' => _request('site'),
+            );
+
+    $id_parent = _request('id_parent');
+    include_spip('action/editer_objet');
+    $id_objet = objet_inserer('horreur', $id_parent, $set);
+
+    // Upload du logo
+    $objet = objet_type('horreur');
+    $_id_objet = id_table_objet($objet);
+
+    // supprimer l'ancien logo puis copier le nouveau
+    include_spip('inc/chercher_logo');
+    include_spip('inc/flock');
+    $type = type_du_logo($_id_objet);
+    $chercher_logo = charger_fonction('chercher_logo','inc');
+
+    include_spip('action/iconifier');
+    $ajouter_image = charger_fonction('spip_image_ajouter','action');
+    $sources = formulaire_editer_logo_get_sources();
+    foreach($sources as $etat=>$file) {
+        if ($file and $file['error']==0) {
+            $logo = $chercher_logo($id_objet, $_id_objet, $etat);
+            if ($logo)
+                spip_unlink($logo[0]);
+            $ajouter_image($type.$etat.$id_objet," ",$file);
+            set_request('logo_up',' ');
+        }
+    }
 
     // Donnée de retour.
     return array(
