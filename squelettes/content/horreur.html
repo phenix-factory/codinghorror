@@ -2,7 +2,9 @@
     <article>
         [<h2><a href="#URL_HORREUR" [title="(#TITRE|couper{50}|attribut_html)"]>(#TITRE)</a></h2>]
 
-        [(#LOGO_HORREUR|image_reduire{705}|centrer)]
+        [<a href="[(#LOGO_HORREUR|extraire_attribut{src})]" class="mediabox">
+            (#LOGO_HORREUR|image_reduire{705}|centrer)
+        </a>]
 
         [(#DESCRIPTIF)]
 
