@@ -76,4 +76,19 @@ body {
             font-size: 1.3em;
         }
     }
+
+    .formulaire_spip {
+        background: $gris;
+        border-color: $vert_fonce;
+        label {
+            font-size: 1.2em;
+            color: $vert_fonce;
+        }
+        .explication {
+            color: inherit;
+        }
+        span.obligatoire {
+            color: $rouge;
+        }
+    }
 }
