@@ -55,6 +55,10 @@ h2, h2 a, h2 a:focus, h2 a:hover, h2 a:active {
                 margin-bottom: $marge;
                 border: 1px solid $vert_clair;
 
+                &.spip_logos {
+                    float: none;
+                }
+
                 &:hover {
                     border: 1px solid $vert_fonce;
                 }
