@@ -105,5 +105,14 @@ h2, h2 a, h2 a:focus, h2 a:hover, h2 a:active {
                 color: inherit;
             }
         }
+        .comment-meta {
+            background: transparent;
+        }
+    }
+
+    #comments {
+        .comment-meta {
+            background: transparent;
+        }
     }
 }
