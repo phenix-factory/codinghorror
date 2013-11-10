@@ -61,9 +61,8 @@ function formulaires_ajouter_horreur_traiter_dist() {
 
     // Donnée de retour.
     return array(
-            'editable' => true,
-            'message_ok' => '',
-            'redirect' => ''
+        'editable' => true,
+        'message_ok' => 'Votre horreur à étée proposée, elle sera examiner, un jour, peut être.'
     );
 }
 ?>
