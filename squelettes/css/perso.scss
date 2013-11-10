@@ -114,5 +114,14 @@ h2, h2 a, h2 a:focus, h2 a:hover, h2 a:active {
         .comment-meta {
             background: transparent;
         }
+        .comment-titre {
+            display: block;
+        }
+        .vcard {
+            display: inline;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
     }
 }
