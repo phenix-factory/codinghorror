@@ -83,6 +83,10 @@ function formulaires_ajouter_horreur_verifier_dist() {
         }
     }
 
+    // Valeur par défaut pour le pseudo
+    if (!_request('pseudo')) 
+        set_request('pseudo', 'Anonymous');
+
     return $erreurs;
 }
 
