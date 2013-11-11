@@ -14,10 +14,10 @@ function get_contexte() {
 
 function formulaires_ajouter_horreur_charger_dist() {
     // On récupère les catégories
-    $cats = sql_allfetsel('id_rubrique, titre', 'spip_rubriques', 'id_parent=2');
+    $cats = sql_allfetsel('id_rubrique, titre', 'spip_rubriques', 'id_parent=2', '', 'titre DESC');
     $categories = array();
     foreach ($cats as $cat) {
-        $categories[$cat['id_rubrique']] = $cat['titre'];
+        $categories[$cat['id_rubrique']] = supprimer_numero($cat['titre']);
     }
 
     // Contexte du formulaire.
