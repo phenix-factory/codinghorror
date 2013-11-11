@@ -75,6 +75,19 @@ h2, h2 a, h2 a:focus, h2 a:hover, h2 a:active,
                     }
                 }
             }
+
+            .commentaires-compteur {
+                background: transparent url(img/commentaires-compteur-40.png) no-repeat;
+                width: 40px;
+                height: 40px;
+                float: right;
+
+                span {
+                    float: right;
+                    margin-top: 3px;
+                    margin-right: 4px;
+                }
+            }
         }
     }
 
