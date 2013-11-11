@@ -18,6 +18,18 @@ h2, h2 a, h2 a:focus, h2 a:hover, h2 a:active,
     max-width: 980px;
     margin: 0 auto;
 
+    header {
+        h1 {
+            a {
+                color: $vert_clair;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+
     ul#menu {
         list-style-type: none;
 
