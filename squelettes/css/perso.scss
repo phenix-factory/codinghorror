@@ -64,6 +64,13 @@ h2, h2 a, h2 a:focus, h2 a:hover, h2 a:active,
                 padding: 0;
             }
 
+            .meta {
+                font-size: 0.8em;
+                display: block;
+                margin-bottom: $marge;
+                float: right;
+            }
+
             img {
                 margin-bottom: $marge;
                 border: 1px solid $vert_clair;
