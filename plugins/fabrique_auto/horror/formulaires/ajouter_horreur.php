@@ -132,6 +132,14 @@ function formulaires_ajouter_horreur_traiter_dist() {
         }
     }
 
+    $envoyer_mail = charger_fonction('envoyer_mail', 'inc');
+    $envoyer_mail(
+        $GLOBALS['meta']['email_webmaster'],
+        'Nouvelle horreur postée proposée',
+        'Une nouvelle Horreur à été proposée par '.$set['pseudo'].'
+        '.generer_url_ecrire('horreur', 'id_horreur='.$id_objet)
+        );
+
     // Donnée de retour.
     return array(
         'editable' => true,
