@@ -107,6 +107,19 @@ h2, h2 a, h2 a:focus, h2 a:hover, h2 a:active,
                     margin-right: 4px;
                 }
             }
+
+            // Blocs depliable
+            .cs_blocs {
+                border: 1px solid $vert_fonce;
+                margin-bottom: 0.8em;
+                padding: $marge;
+
+                .blocs_titre {
+                    background: none;
+                    padding-left: 0;
+                    margin-bottom: $marge;
+                }
+            }
         }
     }
 
