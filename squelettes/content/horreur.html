@@ -1,15 +1,8 @@
 <BOUCLE_horreur(HORREURS){id_horreur}>
-    <article>
-        [<h2><a href="#URL_HORREUR" [title="(#TITRE|couper{50}|attribut_html)"]>(#TITRE)</a></h2>]
+    <INCLURE{fond=inclure/afficher_horreur, id_horreur}>
 
-        [<a href="[(#LOGO_HORREUR|extraire_attribut{src})]" class="mediabox">
-            (#LOGO_HORREUR|image_reduire{705}|centrer)
-        </a>]
+    <INCLURE{fond=inclure/forum, env, id_horreur}>
+    [<h2><:forum:form_pet_message_commentaire:></h2>
+    (#FORMULAIRE_FORUM{#SELF})]
 
-        [(#DESCRIPTIF)]
-
-        <INCLURE{fond=inclure/forum, env, id_horreur}>
-        [<h2><:forum:form_pet_message_commentaire:></h2>
-        (#FORMULAIRE_FORUM{#SELF})]
-    </article>
 </BOUCLE_horreur>
