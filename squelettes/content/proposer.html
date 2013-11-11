@@ -1,3 +1,11 @@
+<BOUCLE_proposer(ARTICLES){id_article=2}>
+    <article>
+        [<h2>(#TITRE)</h2>]
+        [(#LOGO_ARTICLE|image_reduire{705})]
+        [(#TEXTE|image_reduire{705}|iframe_responsive)]
+    </article>
+</BOUCLE_proposer>
+
 <div class="ajax">
     #FORMULAIRE_AJOUTER_HORREUR
 </div>
