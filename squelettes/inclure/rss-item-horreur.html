@@ -1,0 +1,28 @@
+[(#REM)
+	Cette page génère le contenu d'une horreur
+	pour un flux RSS, appelé depuis backend.html
+
+]<BOUCLE_un_article(HORREURS){id_horreur} {statut?}>
+	<item[ xml:lang="(#LANG)"]>
+		<title>[(#TITRE|supprimer_tags|texte_backend)]</title>
+		<link>[(#URL_HORREUR|url_absolue)]</link>
+		[<guid isPermaLink="true">(#URL_HORREUR|url_absolue)</guid>]
+		[<dc:date>(#DATE|date_iso)</dc:date>]
+		<dc:format>text/html</dc:format>
+		[<dc:language>(#LANG)</dc:language>]
+		[<dc:creator>(#PSEUDO|supprimer_tags|texte_backend)</dc:creator>]
+
+        [(#REM)
+        	Le bloc qui suit diffuse aussi le texte integral de l'article,
+        	ce qui permet une syndication plus riche (mais plus "lourde").
+        	Fonction desactivable depuis les reglages du site.
+        ][
+        <content:encoded>
+            [(#LOGO_HORREUR|image_reduire{705}|texte_backend)]
+        	[&lt;div class='rss_texte'&gt;
+                (#DESCRIPTIF|image_reduire{500,0}|texte_backend)
+            &lt;/div&gt;]
+        </content:encoded>
+
+	</item>
+</BOUCLE_un_article>
