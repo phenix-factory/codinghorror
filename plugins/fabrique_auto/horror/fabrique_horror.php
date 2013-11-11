@@ -2,7 +2,7 @@
 
 /**
  *  Fichier généré par la Fabrique de plugin v5
- *   le 2013-11-07 22:57:13
+ *   le 2013-11-11 00:56:18
  *
  *  Ce fichier de sauvegarde peut servir à recréer
  *  votre plugin avec le plugin «Fabrique» qui a servi à le créer.
@@ -173,7 +173,7 @@ $data = array (
         1 => 'id_secteur',
         2 => 'vue_rubrique',
       ),
-      'champ_date' => '',
+      'champ_date' => 'date',
       'statut' => 'on',
       'chaines' => 
       array (

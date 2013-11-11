@@ -52,6 +52,7 @@ function horror_declarer_tables_objets_sql($tables) {
 			"pseudo"             => "text NOT NULL DEFAULT ''",
 			"email"              => "text NOT NULL DEFAULT ''",
 			"site"               => "text NOT NULL DEFAULT ''",
+			"date"               => "datetime NOT NULL DEFAULT '0000-00-00 00:00:00'", 
 			"statut"             => "varchar(20)  DEFAULT '0' NOT NULL", 
 			"maj"                => "TIMESTAMP"
 		),
@@ -62,7 +63,7 @@ function horror_declarer_tables_objets_sql($tables) {
 			"KEY statut"         => "statut", 
 		),
 		'titre' => "titre AS titre, '' AS lang",
-		 #'date' => "",
+		'date' => "date",
 		'champs_editables'  => array('titre', 'descriptif', 'pseudo', 'email', 'site'),
 		'champs_versionnes' => array('titre', 'descriptif', 'pseudo', 'email', 'site'),
 		'rechercher_champs' => array("titre" => 8, "descriptif" => 7, "pseudo" => 6, "email" => 6, "site" => 2),

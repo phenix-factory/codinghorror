@@ -1,5 +1,6 @@
 [(#SET{defaut_tri,#ARRAY{
 	titre,1, 
+	date,-1, 
 	id_horreur,1,
 	points,-1
 }})]<B_liste_horreurs>
@@ -12,6 +13,7 @@
 			<th class='picto' scope='col'></th>
 			<th class='statut' scope='col'>[(#TRI{statut,<span title="<:lien_trier_statut|attribut_html:>">#</span>,ajax})]</th> 
 			<th class='titre' scope='col'>[(#TRI{titre,<:horreur:label_titre:>,ajax})]</th>
+			<th class='date' scope='col'>[(#TRI{date,<:date:>,ajax})]</th> 
 			<th class='id' scope='col'>[(#TRI{id_horreur,<:info_numero_abbreviation:>,ajax})]</th>
 		</tr>
 	</thead>
@@ -21,6 +23,7 @@
 			<td class='picto'>[(#CHEMIN_IMAGE{horreur-16.png}|balise_img)]</td>
 			<td class='statut'>[(#STATUT|puce_statut{horreur,#ID_HORREUR,#ID_RUBRIQUE})]</td> 
 			<td class='titre principale'>[(#LOGO_HORREUR|image_reduire{20,26})]<a href="[(#ID_HORREUR|generer_url_entite{horreur})]" title="<:info_numero_abbreviation|attribut_html:> #ID_HORREUR">[(#RANG). ]#TITRE</a></td>
+			<td class='date secondaire'>[(#DATE|affdate_jourcourt)]</td> 
 			<td class='id'>[(#AUTORISER{modifier,horreur,#ID_HORREUR}|?{
 				<a href="[(#URL_ECRIRE{horreur_edit,id_horreur=#ID_HORREUR})]">#ID_HORREUR</a>,
 				#ID_HORREUR
