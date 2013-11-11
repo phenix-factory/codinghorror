@@ -1,12 +1,6 @@
 <B_horreur_rubrique>
 <BOUCLE_horreur_rubrique(HORREURS){id_rubrique} {par date} {inverse} {pagination}>
-    <article>
-        [<h2><a href="#URL_HORREUR" [title="(#TITRE|couper{50}|attribut_html)"]>(#TITRE)</a></h2>]
-
-        [(#LOGO_HORREUR|image_reduire{705})]
-
-        [(#DESCRIPTIF)]
-    </article>
+    <INCLURE{fond=inclure/afficher_horreur, id_horreur}>
 </BOUCLE_horreur_rubrique>
 [<p class="pagination">(#PAGINATION)</p>]
 </B_horreur_rubrique>
