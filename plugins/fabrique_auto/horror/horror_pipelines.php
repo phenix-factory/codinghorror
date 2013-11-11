@@ -48,4 +48,26 @@ function horror_affiche_enfants($flux) {
 }
 
 
+function horror_post_edition($flux) {
+
+    if ($flux['data']['statut'] == 'publie'
+        and $flux['args']['table'] == 'spip_horreurs'
+        and $flux['args']['action'] == 'instituer') {
+
+        // On va chercher le mail de la personne qui a poster l'horreur.
+        $horreur = sql_allfetsel('email, pseudo', 'spip_horreurs', 'id_horreur='.sql_quote($flux['args']['id_objet']));
+
+        $envoyer_mail = charger_fonction('envoyer_mail', 'inc');
+        $envoyer_mail(
+            $horreur[0]['email'],
+            'Votre horreur à été mise en ligne',
+            'Bonjour '.$horreur[0]['pseudo'].',
+            Votre horreur à étée mise en ligne, vous pouvez la visionner à cette adresse: 
+            '.url_absolue(generer_url_entite($flux['args']['id_objet'], 'horreurs', $args='', $ancre='', $public=true, $type=NULL))
+            );
+    }
+
+    return $flux;
+}
+
 ?>

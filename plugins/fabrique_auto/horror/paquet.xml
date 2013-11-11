@@ -46,6 +46,7 @@
 	<pipeline nom="declarer_tables_objets_sql" inclure="base/horror.php" /> 
 	<pipeline nom="declarer_tables_interfaces" inclure="base/horror.php" /> 
 	<pipeline nom="affiche_enfants" inclure="horror_pipelines.php" /> 
+    <pipeline nom="post_edition" inclure="horror_pipelines.php" />
 
 	<menu nom="horreurs" titre="horreur:titre_horreurs" parent="menu_edition" icone="images/horreur-16.png" action="horreurs" /> 
 	<menu nom="horreur_creer" titre="horreur:icone_creer_horreur" parent="outils_rapides" icone="images/horreur-new-16.png" action="horreur_edit" parametres="new=oui" /> 
