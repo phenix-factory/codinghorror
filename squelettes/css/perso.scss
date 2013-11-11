@@ -63,7 +63,9 @@ h2, h2 a, h2 a:focus, h2 a:hover, h2 a:active,
                 margin-bottom: $marge;
                 padding: 0;
             }
-
+            ul {
+                list-style: disc;
+            }
             .meta {
                 font-size: 0.8em;
                 display: block;
