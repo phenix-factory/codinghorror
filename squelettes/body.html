@@ -11,7 +11,7 @@
                 <INCLURE{fond=inclure/nav,env} />
             </div>
             <div class="columns large-4 proposer_bouton">
-                <a href="#URL_PAGE{proposer}" id="proposer" class="button radius">Proposer une horreur !</a>
+                <a href="#URL_PAGE{proposer}" id="proposé" class="button radius">Proposer une horreur !</a>
             </div>
         </nav>
 
@@ -46,4 +46,17 @@
       })();
     </script>
     <!-- End Piwik Code -->
+    
+    <!-- Faceshit -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Twitter d'amour -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </body>
