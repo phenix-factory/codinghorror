@@ -1,6 +1,14 @@
 <B_horreur>
 <article>
 <BOUCLE_horreur(HORREURS){id_horreur}>
+
+    <div class="social">
+        <!-- facebook -->
+        <div href="[(#URL_HORREUR|url_absolue)]" class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+        <!-- Twitter -->
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="[(#URL_HORREUR|url_absolue)]" data-text="#TITRE" data-hashtags="syntaxHorror">Tweet</a>
+    </div>
+
     [<h2><a href="#URL_HORREUR" [title="(#TITRE|couper{50}|attribut_html)"]>(#TITRE)</a></h2>]
 
     [<a href="[(#LOGO_HORREUR|extraire_attribut{src})]" class="mediabox">
