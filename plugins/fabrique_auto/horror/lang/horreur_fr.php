@@ -31,6 +31,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_site' => 'Site web ?',
 	'label_titre' => 'Titre',
 
+    // p
+    'propose' => 'Proposer une horreur !',
+
 	// R
 	'retirer_lien_horreur' => 'Retirer cette horreurs',
 	'retirer_tous_liens_horreurs' => 'Retirer toutes les horreurs',
