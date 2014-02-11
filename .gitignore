@@ -1,7 +1,7 @@
 config/connect.php
 config/bases/
 tmp/
-IMG/
+/IMG/
 local/
 .backup
 .svn*
